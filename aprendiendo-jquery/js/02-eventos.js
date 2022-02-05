@@ -35,4 +35,22 @@ caja.dblclick(function(){
 		   .css("color","yellow");
 });
 
+//Focus y blur 
+let nombre = $("#nombre");
+
+
+nombre.focus(function(){
+	$(this).css("outline","2px solid green");
+});
+
+nombre.blur(function(){//cuando estamos afuera del foco
+	$(this).css("outline","1px solid #aaa");
+	$(this).val();//capturo el valor guardado en el input
+	$("#datos").text($(this).val()).show();
+
+	//.text('texto') es un metodo para introducir texto al elemento seleccionado
+	//.show() muestra el elemento
+});
+
+
 });
