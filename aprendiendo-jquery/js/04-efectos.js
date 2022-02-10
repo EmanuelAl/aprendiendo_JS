@@ -57,6 +57,11 @@ es la opacity(del 0 al 1)
 .fadeTo('slow/fast/normal','opacity')
 */
 
+/*todos estos metodos de Efectos
+tambien pueden recibir un segundo parametro
+de funcion callback para ejecutar alguna sentencia 
+que queramos cuando finaliza el metodo efecto
+*/
 /***************************************/
 /*HACER UN TOGGle CON MENOS CODIGO
 USANDO EL METODO TOGGLE*/
@@ -73,7 +78,11 @@ USANDO EL METODO TOGGLE*/
 	// .fadeToggle('slow/fast/normal');
 	// .slideToggle('slow/fast/normal');efecto de despliegue
 	 });
-
+/*todos estos metodos de Efectos
+tambien pueden recibir un segundo parametro
+de funcion callback para ejecutar alguna sentencia 
+que queramos cuando finaliza el metodo efecto
+*/
 /****************************************/
 // ANIMACIONES
 
