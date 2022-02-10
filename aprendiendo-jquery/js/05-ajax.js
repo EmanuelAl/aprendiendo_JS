@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	//Get y Post
 
-	$.get("https://reqres.in/api/users?page=2",{page: 2},function(response){
+	$.get("https://reqres.in/api/users",{page: 2},function(response){
 
 		/*parte del json array que nos llega :
 			"data": [
@@ -28,7 +28,38 @@ $(document).ready(function(){
 			//element adoptara el objeto recorrido para asi acceder a sus propiedades
 			$("#datos").append(`<p>${element.first_name} ${element.last_name}</p>`)	
 		});
-		
+
+	});
+
+	//Post para enviar un json a la api
+
+	let usuario = {
+		name: 'Emanuel',
+		pais: 'Argentina'
+	};
+	// .post(url,Obj,funcionCallback)
+	$.post("https://reqres.in/api/users",usuario,function(response){
+			console.log(response);
+	});
+
+	//trabajando con post y el formulario 
+	$("#formulario").submit(function(e){
+		e.preventDefault();//para capturar el evento y hacer que no nos redirija a otra pagina
+		let usuarioForm = {
+		name: $('input[name="name"]').val(),
+		pais: $('input[name="pais"]').val()
+		};
+		console.log(usuarioForm);
+	// .post(url,Obj,funcionCallback)
+		$.post($(this).attr("action"),usuarioForm,function(response){
+			console.log(response);
+		}).done(function(){
+			alert("usuario añadido correctamente");
+		});
+
+
+
+		return false;//tambien para hacer que no nos redirija a otro lado
 	});
 
 });
