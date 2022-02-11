@@ -25,6 +25,20 @@ $(document).ready(function(){
 			console.log("ha cambiado la lista");
 		}
 	});
+
+
+
+	//Drop
+	$("#elemento-movido").draggable();//para mover el elemnto que se va a poner sobre el area
+	$("#area").droppable({
+		drop: function(){
+			console.log("has soltado algo dentro del area");
+		}
+	});
+
+
+
+
 });
 	
 
