@@ -49,15 +49,33 @@ $(document).ready(function(){
 		name: $('input[name="name"]').val(),
 		pais: $('input[name="pais"]').val()
 		};
-		console.log(usuarioForm);
+		//console.log(usuarioForm);
 	// .post(url,Obj,funcionCallback)
+	/*
 		$.post($(this).attr("action"),usuarioForm,function(response){
 			console.log(response);
 		}).done(function(){
 			alert("usuario añadido correctamente");
 		});
-
-
+	*/	
+		//manera mas facil de hacer request y response
+		//o sea de hacer peticion y respuesta , es con $.ajax
+		// tiene bastantes propiedades
+		$.ajax({
+			type: "POST",//Tipo de peticion GET/POST..etc
+			url: $(this).attr("action"),
+			data: usuarioForm,
+			beforeSend: function(){//prop. para mostrar algo o hacer algo antes de enviar la peticion-callbacks
+				console.log("enviando usuario...");
+			},
+			success: function(response){//prop. para ejecutar algo cuando se completo la peticion-callbacks
+				console.log(response);
+			},
+			error: function(){// para mostrar algo que sea error o mostrar algun error-callbacks
+				console.log("ha ocurrido un error");
+			},
+			timeout: 1000 // ms que esperara, es el tiempo necesatio como para que nos llegue la respuesta de la piticion y luego ejecutar los otros callbacks o error
+		});
 
 		return false;//tambien para hacer que no nos redirija a otro lado
 	});
