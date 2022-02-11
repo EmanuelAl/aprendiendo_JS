@@ -4,4 +4,6 @@ $(document).ready(function(){
 	//REdimensionar
 	$(".elemento").resizable();
 
+	//Seleccionar elementos de una lista
+	$(".lista-seleccionable").selectable();
 });
