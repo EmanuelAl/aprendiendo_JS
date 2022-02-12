@@ -37,7 +37,29 @@ $(document).ready(function(){
 	});
 
 
+	//Efectos en Jquery ui-
+	// recomendacion es ver la documentacion
+	$("#mostrar").click(function(){//evento click
 
+		//$(".caja-efectos").toggle("fade");
+		//$(".caja-efectos").fadeToggle();
+		//$(".caja-efectos").effect("explode");
+		//$(".caja-efectos").toggle("explode");
+		//$(".caja-efectos").toggle("blind");
+		//$(".caja-efectos").toggle("slide");
+		//$(".caja-efectos").toggle("drop");
+		//$(".caja-efectos").toggle("fold");
+		//$(".caja-efectos").toggle("puff");
+		//$(".caja-efectos").toggle("scale");
+		//$(".caja-efectos").toggle("shake");
+		//$(".caja-efectos").toggle("shake",'slow');con indicador de velocidad
+		//$(".caja-efectos").toggle("shake", 400);con indicador de tiempo
+		$(".caja-efectos").toggle("shake", 4000);
+
+
+		// referencia:	
+		//$("seleccion").toggle("efecto",{algo en json},"velocidad/tiempo/")
+	});
 
 });
 	
