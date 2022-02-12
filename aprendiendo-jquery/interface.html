@@ -5,6 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 
+<!-- enlace cdn para usar un tooltips que encontre en una web
+para aplicar el tooltips se agrega esto "data-wenk="I'm small!" en el elemento/etiqueta y
+se le asigna el titulo a mostrar cuando se superponga el cursor en el elemento
+-->
+<link rel="stylesheet" href="https://unpkg.com/wenk/dist/wenk.css">
+
+
 <!-- para poder usar resizable, se cargar los estilos de Jquery ui-->
 	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
 	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
@@ -61,6 +68,25 @@
 </head>
 <body>
 	<h1>Aprendiendo JQuery - JQuery UI</h1>
+
+
+	<hr>
+	<h3>Tooltips</h3>
+	<a href="#" data-wenk="I'm small!" >Mis datos</a>
+	<a href="#" title="Logueate en esta pagina" >identificarse</a>
+	<a href="#" data-wenk="ver todos mis amigos" >Amigos</a>
+
+	<hr>
+
+	<h3>Cuadros de dialogo</h3>
+	<button id="lanzar-popup">Lanzar popup</button>
+	
+	<div id="popup" title="¿Estas seguro?">
+		Si continuas en el curso aprenderas mucho de JavaScript
+	</div>
+
+	<hr>
+
 
 	<button id="mostrar">Mostrar</button>
 

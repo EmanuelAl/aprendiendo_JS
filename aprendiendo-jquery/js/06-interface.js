@@ -61,6 +61,15 @@ $(document).ready(function(){
 		//$("seleccion").toggle("efecto",{algo en json},"velocidad/tiempo/")
 	});
 
+	//metodo tooltips
+	$(document).tooltip();//cuando el curso se posa sobre el enlace muestra lo que contiene en el atributo title del enlace
+
+	//Dialog
+	$("#lanzar-popup").click(function(){
+			$("#popup").dialog();//aparece un popup al hacer click en el boton
+			
+	});
+	
 });
 	
 
