@@ -71,7 +71,14 @@ $(document).ready(function(){
 	});
 	
 	//Datepicker
+
 	$("#calendario").datepicker();
+
+
+	//TAbs
+	$("#pestanas").tabs();
+
+
 });
 	
 
