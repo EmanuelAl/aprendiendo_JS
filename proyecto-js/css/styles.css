@@ -1,3 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+}
+.clearfix {
+	float: none;
+	clear: both;
+}
+
 body {
-	background: red;
+	background: url(../img/hojas.jpg);
+	background-attachment: fixed;
+}
+
+#global {
+	width: 65%;
+	margin: 0px auto;
+	margin-top: 30px;
+	padding: 20px;
+	background: white;
+	box-shadow: 1px 1px 2px grey;
+}
+
+#logo {
+	font-family:  Verdana , Arial;
+	font-size: 25px;
+	letter-spacing: 4px;
+	//line-height: 80px;
+	background: #006040;
+	color: white;
+	text-align: center;
+	width: 385px;
+	height: 80px;
+	margin-bottom: 20px;
+	//float:left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
