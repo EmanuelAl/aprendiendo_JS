@@ -178,3 +178,8 @@ footer {
 	display: flex;
 	align-items: center;
 }
+/**** estilos para modificar la 
+altura al plugin de slider jquery *****/
+.bx-wrapper,.bx-viewport {
+	height: 250px !important;
+}
