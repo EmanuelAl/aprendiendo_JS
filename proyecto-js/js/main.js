@@ -88,4 +88,31 @@ html {
   scroll-behavior: smooth;
 }
  */
+
+ 	//login falso 
+ 	//usamos local storage 
+ 	$("#login").submit(function(){
+ 		let form_name = $("#form_name").val();
+
+ 		localStorage.setItem("form_name", form_name);
+ 	});
+
+ 	let form_name = localStorage.getItem("form_name");
+ 	
+ 	if(form_name != null && form_name != "undefined"){
+ 		let about_parrafo = $("#about p");
+
+ 		about_parrafo.html(`<br><strong>Bienvenido ${form_name}</strong>`);
+ 		about_parrafo.append('<a href="#" id="logout">Cerrar sesión</a>');	
+
+ 		$("#login").hide();// esto hace que no se vea en pantalla
+
+ 		$("#logout").click(function(){
+ 			localStorage.clear();// borra todas las variables que se hayan guardado en la memoria del navegador, o sea en el localStorage
+ 			location.reload(); //recarga la ventana del navegador, esto ya es parte del concepto BOM browser object model
+
+ 		});
+ 	}
+
+
 });
