@@ -7,10 +7,10 @@ $(document).ready(function(){
     mode: 'fade',
     captions: true,
     slideWidth: 1200,
-  });
+  	});
 
 // Posts
-let posts = [
+	let posts = [
 	{
 		title: "prueba de titulo 1",
 		date: 'Publicado el dia ' + moment().date()+ ' de '+moment().format("MMMM")+ ' del '+moment().format("YYYY"),
@@ -41,7 +41,7 @@ let posts = [
 		date: 'Publicado el dia ' + moment().date()+ ' de '+moment().format("MMMM")+ ' del '+moment().format("YYYY"),
 		content: "Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Sint dolorem illo aliquid. Id, ipsa, nostrum! Recusandae enim voluptas pariatur earum deserunt autem quisquam maxime voluptatibus odit, culpa corporis est eaque! Est earum modi consectetur reprehenderit, fugiat maiores obcaecati dignissimos nulla suscipit voluptates, ducimus deleniti mollitia veniam corrupti enim accusamus corporis magnam impedit id saepe totam incidunt temporibus aspernatur? Tempore, impedit."
 	}
-];
+	];
 	
 	posts.forEach((element, index ) => {
 		let post = `
@@ -57,6 +57,7 @@ let posts = [
 		$("#posts").append(post);
 	});
 	
+	// para cambiar los temas de la pagina
 	let theme = $("#theme");
 	$("#to-green").click(function(){
 		theme.attr("href","css/green.css");
@@ -68,7 +69,23 @@ let posts = [
 		theme.attr("href","css/blue.css");
 	});
 
+	//Scroll suavizado al subir
 
+	$(".subir").click(function(e){
+		e.preventDefault(); // para que no nos redirija a ningun lado el enlace
+		$('html, body').animate({
+			scrollTop: 0
+		}, 500);
 
+		return false;
+	});
 
+ /*
+ el scroll suavizado con css 
+ ya que lo tiene tambien implementado
+ en forma nativa solo poniendo
+html {
+  scroll-behavior: smooth;
+}
+ */
 });

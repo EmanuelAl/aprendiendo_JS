@@ -4,6 +4,11 @@
 	list-style: none;
 	box-sizing: border-box;
 }
+/* para hacer el suavizado de scroll con css*/
+/*html {
+  scroll-behavior: smooth;
+}
+*/
 .clearfix {
 	float: none;
 	clear: both;
@@ -168,6 +173,7 @@ footer {
 	margin-top: 50px;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 }
 /**** estilos para modificar la 
 altura al plugin de slider jquery *****/
@@ -207,3 +213,9 @@ altura al plugin de slider jquery *****/
 #to-blue {
 	background: #1324FF;
 }
+
+.subir {
+	color: white;
+	text-decoration: none;
+}
+
