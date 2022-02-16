@@ -1,0 +1,19 @@
+body {
+	background: url(../img/rojo.jpg);
+	background-attachment: fixed;
+}
+:root {
+	--color--variable:#F41F29;
+}
+
+#logo {
+	background: var(--color--variable);
+}
+
+#nav-bar ul li:hover {
+	background: var(--color--variable);
+} 
+
+.button-more {
+	background: var(--color--variable);
+}

@@ -1,0 +1,19 @@
+body {
+	background: url(../img/cielo.jpg);
+	background-attachment: fixed;
+}
+:root {
+	--color--variable:#1324FF;
+}
+
+#logo {
+	background: var(--color--variable);
+}
+
+#nav-bar ul li:hover {
+	background: var(--color--variable);
+} 
+
+.button-more {
+	background: var(--color--variable);
+}

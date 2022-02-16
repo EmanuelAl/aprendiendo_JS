@@ -9,11 +9,6 @@
 	clear: both;
 }
 
-body {
-	background: url(../img/hojas.jpg);
-	background-attachment: fixed;
-}
-
 #global {
 	width: 65%;
 	margin: 0px auto;
@@ -28,7 +23,7 @@ body {
 	font-size: 25px;
 	letter-spacing: 4px;
 	//line-height: 80px;
-	background: #006040;
+	//background: #006040;
 	color: white;
 	text-align: center;
 	width: 385px;
@@ -59,10 +54,6 @@ body {
 	height: 46px;
 	transition: all 300ms;
 }
-
-#nav-bar ul li:hover {
-	background: #006040;
-} 
 
 #nav-bar a {
 	color: white;
@@ -182,4 +173,37 @@ footer {
 altura al plugin de slider jquery *****/
 .bx-wrapper,.bx-viewport {
 	height: 250px !important;
+}
+/***** selector de temas *****/
+#selector-theme {
+	position: fixed;
+	top: 40%;
+	background: rgba(51, 51, 51, .7);
+	width: 50px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	
+}
+/***estilos para los botones de los theme ***/
+#to-green,#to-red,#to-blue {
+	width: 25px;
+	height: 25px;
+	border: 1px solid white;
+	//margin: 0 auto;
+	cursor: pointer;
+}
+/* color de fondo para cada boton*/
+#to-green {
+	background: #006040;
+}
+
+#to-red {
+	background: #F41F29;
+}
+
+#to-blue {
+	background: #1324FF;
 }
