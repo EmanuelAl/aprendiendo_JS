@@ -82,9 +82,10 @@
 	padding: 7px;
 }
 
-.post h2 {
+h2 {
 	font-size: 30px;
 	color: #333;
+	font-family: Helvetica, Arial;
 }
 
 .post .date {
@@ -219,3 +220,11 @@ altura al plugin de slider jquery *****/
 	text-decoration: none;
 }
 
+#box {
+	width: 60%;
+	margin-top: 40px;
+}
+
+#acordeon {
+	margin-top: 20px;
+}

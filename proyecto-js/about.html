@@ -6,19 +6,17 @@
 	<!-- EStilos CSS 	-->
 	<link rel="stylesheet" href="css/styles.css">
 	<link  id="theme" rel="stylesheet" href="css/green.css">
-
 	<!-- el archivo jquery se pone antes que otro archivo que esté basado en jquery, para evitar errores-->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- JQuery  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+	<!-- JQuery UI -->
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
+	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
 
-  	<!-- Slider bxslider jquery	-->
-  	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-
-<!-- mis Script	-->
-	<!-- Moment plugin...cdn para usar en el archivo js el metodo moment() -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es-do.min.js" integrity="sha512-nd+sHCFw3dvYZrCiyIep4gtDxxGCmSxJA9YzdypHAd87Wr82lnxBTjh8BFtCsaskO1aCpboChap2GG+1l0S25w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<!-- enlace a nuestro archivo js	-->
+	<!-- enlace a nuestro archivo js main	-->
   	<script type="text/javascript" src="js/main.js"></script>
   		<title>Proyecto con JavaScript</title>
 </head>
@@ -44,19 +42,34 @@
 				</ul>
 			</nav>
 		</header>
-		<!-- Slider -->
-		<div class ="slider">
-			
-  			<div><img src="img/hojas.jpg" title="imagen de hojas"></div>
-  			<div><img src="img/rojo.jpg" title="hojas de color rojo"></div>
-  			<div><img src="img/cielo.jpg" title="picture del cielo"></div>
-
-		</div>
+		
 		<section id="content">
-			<div id="posts">
-				<!-- Carga de posts desde Json-->
-				
+
+			<div id="box">
+				<!-- Carga acordeon-->
+				<h2>Sobre mi</h2>
+				<div id="acordeon">
+					<h3>¿Quienes somos?</h3>
+					<div>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus pariatur ut rem nihil doloremque esse asperiores, molestiae qui dicta harum eos, iste aliquid consectetur similique nisi, cum. Aliquid, nihil? Odit.
+						</p>
+					</div>
+					<h3>Nuestros servicios</h3>
+					<div>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus pariatur ut rem nihil doloremque esse asperiores, molestiae qui dicta harum eos, iste aliquid consectetur similique nisi, cum. Aliquid, nihil? Odit.
+						</p>
+					</div>
+					<h3>Nuestros clientes</h3>
+					<div>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus pariatur ut rem nihil doloremque esse asperiores, molestiae qui dicta harum eos, iste aliquid consectetur similique nisi, cum. Aliquid, nihil? Odit.
+						</p>
+					</div>
+				</div>
 			</div>
+
 			<aside id="sidebar">
 				<div id="about">
 					<h4><span>¿Quien soy?</span></h4>
