@@ -119,10 +119,21 @@ html {
 
  		});
  	}
-
+ 	//acordeon
  	if(window.location.href.indexOf('about') > -1){//si estamos ubicados en la pagina about.html entonces se ejecutara el codigo
  		$("#acordeon").accordion();
 	}
+
+	//Reloj
+	if(window.location.href.indexOf('reloj') > -1){//si estamos ubicados en la pagina reloj.html entonces se ejecutara el codigo
+ 		
+ 		setInterval(function(){
+ 			let reloj = moment().format("h:mm:ss");
+ 			console.log(reloj);
+ 			$("#reloj").html(reloj);
+ 		},1000);
+
+ 	 }
 
 
 });

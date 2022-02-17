@@ -17,3 +17,8 @@ body {
 .button-more {
 	background: var(--color--variable);
 }
+
+#acordeon h3 {
+	background: var(--color--variable);
+	color: white;
+}

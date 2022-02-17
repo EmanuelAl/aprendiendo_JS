@@ -228,3 +228,14 @@ altura al plugin de slider jquery *****/
 #acordeon {
 	margin-top: 20px;
 }
+
+#reloj {
+	font-size: 40px;
+	font-weight: bold;
+	font-family: Helvetica , Arial;
+	color: #333;
+	border: 5px dashed #333;
+	width: 43%;
+	padding: 20px;
+	margin : 0 auto;
+}

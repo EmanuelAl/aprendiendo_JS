@@ -10,11 +10,9 @@
 	<!-- JQuery  -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
-	<!-- JQuery UI -->
-	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
-	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
-	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
+	<!-- Moment plugin...cdn para usar en el archivo js el metodo moment() -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es-do.min.js" integrity="sha512-nd+sHCFw3dvYZrCiyIep4gtDxxGCmSxJA9YzdypHAd87Wr82lnxBTjh8BFtCsaskO1aCpboChap2GG+1l0S25w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 	<!-- enlace a nuestro archivo js main	-->
   	<script type="text/javascript" src="js/main.js"></script>
@@ -46,28 +44,9 @@
 		<section id="content">
 
 			<div id="box">
-				<!-- Carga acordeon-->
-				<h2>Sobre mi</h2>
-				<div id="acordeon">
-					<h3>¿Quienes somos?</h3>
-					<div>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus pariatur ut rem nihil doloremque esse asperiores, molestiae qui dicta harum eos, iste aliquid consectetur similique nisi, cum. Aliquid, nihil? Odit.
-						</p>
-					</div>
-					<h3>Nuestros servicios</h3>
-					<div>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus pariatur ut rem nihil doloremque esse asperiores, molestiae qui dicta harum eos, iste aliquid consectetur similique nisi, cum. Aliquid, nihil? Odit.
-						</p>
-					</div>
-					<h3>Nuestros clientes</h3>
-					<div>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus pariatur ut rem nihil doloremque esse asperiores, molestiae qui dicta harum eos, iste aliquid consectetur similique nisi, cum. Aliquid, nihil? Odit.
-						</p>
-					</div>
-				</div>
+				<!-- Carga reloj-->
+				<div id="reloj"></div>
+				
 			</div>
 
 			<aside id="sidebar">
