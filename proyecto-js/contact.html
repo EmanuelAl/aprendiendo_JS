@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- EStilos CSS 	-->
+	<link rel="stylesheet" href="css/styles.css">
+	<link  id="theme" rel="stylesheet" href="css/green.css">
+	<!-- el archivo jquery se pone antes que otro archivo que esté basado en jquery, para evitar errores-->
+	<!-- JQuery  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+	
+	<!-- JQuery UI -->
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
+	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
+
+	<!-- Plugin validacion -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+	
+	<!-- enlace a nuestro archivo js main	-->
+  	<script type="text/javascript" src="js/main.js"></script>
+  		<title>Proyecto con JavaScript</title>
+</head>
+<body>
+	<div id="selector-theme">
+		<div id="to-green"></div>
+		<div id="to-red"></div>
+		<div id="to-blue"></div>
+	</div>
+	<section id="global">
+		<!-- Cabecera 	-->
+		<header>
+			<div id="logo">
+				<h1>Proyecto JS</h1>
+			</div>
+			<div class="clearfix"></div>
+			<nav id="nav-bar">
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="reloj.html">Reloj</a></li>
+					<li><a href="about.html">Sobre mi</a></li>
+					<li><a href="contact.html">Contacto</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section id="content">
+
+			<div id="box">
+				<!-- Carga Formulario-->
+				<h2>Contacto</h2>
+				<form action="#"  method="POST" id="form_contact">
+					<label for="first_name">Nombre</label>
+					<input type="text" name="name" id="name"  >
+
+					<label for="last_name">Apellido</label>
+					<input type="text" name="last_name" id="last_name" >
+
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" >
+
+					<label for="sex">Sexo</label>
+					<select name="sex" id="sex" >
+						<option disabled selected value>Seleccione una opcion</option>
+						<option value="men">Hombre</option>
+						<option value="women">Mujer</option>
+					</select>
+
+					<label for="date">Fecha de nacimiento</label>
+					<input type="text" name="date" id="date"  >
+
+					<label for="age">Edad</label>
+					<input type="number" name="age" id="age" min="18" >
+
+					<input type="submit" value="Enviar">
+				</form>
+			</div>
+
+			<aside id="sidebar">
+				<div id="about">
+					<h4><span>¿Quien soy?</span></h4>
+					<img src="img/caracol.jpg" alt="imagen de un caracol">
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde commodi voluptas, quis architecto dolorum eum sed excepturi similique impedit aperiam fugiat omnis praesentium, doloremque nesciunt exercitationem, temporibus odit modi deleniti.</p>
+				</div>
+				<div id="login">
+					<h4><span>Identificate</span></h4>
+					<form action="#">
+						<label for="name">Nombre</label>
+						<input type="text" id="form_name">
+						<label for="email">Email</label>
+						<input type="email" id="email">
+						<label for="password">Contraseña</label>
+						<input type="password" id="password">
+
+						<input type="submit" value="Entrar">
+
+					</form>
+				</div>
+			</aside>
+		</section>
+		
+	</section>
+	<footer>
+		Master de JavaScript 
+
+		<a href="#" class="subir">Ir arriba</a>
+	</footer>
+</body>
+</html>

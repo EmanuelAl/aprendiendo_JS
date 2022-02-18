@@ -146,7 +146,9 @@ h2 {
 /********formulario login ******/
 form input[type="text"],
 form input[type="email"],
-form input[type="password"] {
+form input[type="password"],
+form input[type="number"],
+select {
 	padding: 5px;
 	border-radius: 2px;
 	border: 1px solid #ccc;
@@ -238,4 +240,28 @@ altura al plugin de slider jquery *****/
 	width: 43%;
 	padding: 20px;
 	margin : 0 auto;
+}
+
+#form_contact {
+	width: 50%;
+	margin-top: 15px;
+	font-family: Helvetica, Arial;
+}
+
+#form_contact label {
+	display: flex;
+	//width: 100%;
+	margin-top: 5px;
+}
+
+#form_contact input[aria-invalid="true"] {
+	outline-color: red;
+}
+
+#form_contact select[aria-invalid="true"] {
+	outline-color: red;
+}
+
+#form_contact label[class="error"] {
+	color: red ;
 }

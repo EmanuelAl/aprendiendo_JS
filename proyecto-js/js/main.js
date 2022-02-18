@@ -136,4 +136,81 @@ html {
  	 }
 
 
+ 	 //Validacion del form
+
+ 	 if(window.location.href.indexOf('contact') > -1){
+ 	 	// para mostrar calendario de fechsa
+ 	 	$("form input[name='date']").datepicker({
+ 	 		dateFormat:'dd-mm-yy'
+ 	 	});
+
+ 	 	// $.validate({
+ 	 	// 	lang: 'es'	
+ 	 	// });
+
+ 	 	// $("#form_contact").validate({
+ 	 	// 	lang: 'es'
+ 	 	// });
+
+
+ 	 	  $("#form_contact").validate({
+		    rules: {
+		      name : {
+		        required: true,
+		        minlength: 3
+		      },
+		      last_name : {
+		        required: true,
+		        minlength: 3
+		      },
+		      age: {
+		        required: true,
+		        number: true,
+		        min: 18
+		      },
+		      email: {
+		        required: true,
+		        email: true
+		      },
+		      sex: {
+		        required: true
+		       	},
+		      date: {
+		        required: true
+		       		}
+
+		     },
+		     messages : {
+				name: {
+				   required: "Debe completar el campo nombre",
+				   minlength: "El nombre debe tener al menos 3 caracteres"
+				 },
+				 last_name: {
+				   required: "Debe completar el campo apellido",
+				   minlength: "El apellido debe tener al menos 3 caracteres"
+				 },
+				age: {
+				   required: "Por favor ingrese su edad",
+				   number: "Por favor, introduzca su edad como un valor numérico",
+				   min: "Debe tener al menos 18 años de edad"
+				},
+				email: {
+				   required: "Debe completar el campo email",
+				   email: "El correo electrónico debe tener el formato: abc@domain.tld"
+				},
+				sex: {
+		        	required: "Por favor seleccione su sexo"
+		       	},
+		        date: {
+		        	required: "Por favor ingrese su fecha de nacimiento"
+		       		}
+   		 	}
+   		 
+  		});//cierre del validate()
+
+
+
+ 	}//cierre del if 
+
+
 });
