@@ -241,7 +241,7 @@ altura al plugin de slider jquery *****/
 	padding: 20px;
 	margin : 0 auto;
 }
-
+/*//formulario de contacto*/
 #form_contact {
 	width: 50%;
 	margin-top: 15px;
@@ -253,7 +253,7 @@ altura al plugin de slider jquery *****/
 	//width: 100%;
 	margin-top: 5px;
 }
-
+/*estilos de mensajes de error y validacion en input y select*/
 #form_contact input[aria-invalid="true"] {
 	outline-color: red;
 }
