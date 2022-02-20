@@ -1,4 +1,11 @@
-//String
+// con la palabra reservada type creamos tipos de datos
+// personalizados
+type alfanumerico = string | number;
+
+let cadena2: alfanumerico = "string o number";
+cadena2= 12;
+
+//String o number
 let cadena: string | number = 'Emanuel Alderete';
 // es decir que la variable cadena ahora puede ser de 
 // dos tipos de datos , string o number,

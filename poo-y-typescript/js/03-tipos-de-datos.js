@@ -1,4 +1,6 @@
-//String
+var cadena2 = "string o number";
+cadena2 = 12;
+//String o number
 var cadena = 'Emanuel Alderete';
 // es decir que la variable cadena ahora puede ser de 
 // dos tipos de datos , string o number,
