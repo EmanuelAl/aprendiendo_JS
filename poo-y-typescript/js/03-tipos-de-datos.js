@@ -1,5 +1,9 @@
 //String
 var cadena = 'Emanuel Alderete';
+// es decir que la variable cadena ahora puede ser de 
+// dos tipos de datos , string o number,
+// pero no otros tipos de datos
+cadena = 12;
 //number 
 var numero = 12;
 //boleano
@@ -11,4 +15,5 @@ cualquiera = 77; //ahora si se puede asignar y no saltaria errores si el valor n
 var lenguajes = ['PHP', 'JS', 'css', 12];
 //otra forma de definir un array
 var years = [12, 13, 14];
+// let years: any[] = [12, 13, 14,'hola']; otro ejemplo
 console.log(cadena, numero, verdadero_falso, cualquiera, lenguajes, years);
