@@ -1,4 +1,4 @@
-import {Camiseta} from './camiseta';
+//import {Camiseta} from './camiseta';// se pone ./ para indicar que el archivo esta en la misma carpeta js
 
 class Main {
     constructor(){

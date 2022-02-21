@@ -1,6 +1,5 @@
-"use strict";
-exports.__esModule = true;
-exports.Camiseta = void 0;
+/* la interfaz se aplica a la clase usando
+'implements NombreInterface' */
 //Clase (molde del objeto)
 var Camiseta = /** @class */ (function () {
     //Metodos (funciones o acciones del objeto)
@@ -19,8 +18,7 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-exports.Camiseta = Camiseta;
-// var camiseta = new Camiseta("rojo", "Manga Larga","nike", "L", 14);//instanciar de la clase para crear un objeto
+var camiseta = new Camiseta("rojo", "Manga Larga", "nike", "L", 14); //instanciar de la clase para crear un objeto
 // camiseta.setColor("Rojo");
 // //camiseta.getColor();
-// console.log(camiseta.getColor());
+console.log(camiseta);

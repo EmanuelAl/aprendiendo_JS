@@ -1,5 +1,15 @@
+//Interface
+//se usa para obligar a una clase a utilizar metodos o propiedades de forma obligatoria
+interface CamisetaBase{
+    setColor(color);//declarado igual que el metodo que esta en clase camiseta
+    getColor();//declarado igual que el metodo que esta en clase camiseta
+}
+/* la interfaz se aplica a la clase usando
+'implements NombreInterface' */
+
+
 //Clase (molde del objeto)
-export class Camiseta {
+class Camiseta implements CamisetaBase{
 
     //Propiedades (caracteristicas del objeto)
     private color: string;
@@ -25,11 +35,11 @@ export class Camiseta {
 
 }
 
-// var camiseta = new Camiseta("rojo", "Manga Larga","nike", "L", 14);//instanciar de la clase para crear un objeto
+var camiseta = new Camiseta("rojo", "Manga Larga","nike", "L", 14);//instanciar de la clase para crear un objeto
 // camiseta.setColor("Rojo");
 // //camiseta.getColor();
 
 
 
-// console.log(camiseta.getColor());
+console.log(camiseta);
 
