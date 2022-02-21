@@ -1,5 +1,5 @@
 //Clase (molde del objeto)
-class Camiseta {
+export class Camiseta {
 
     //Propiedades (caracteristicas del objeto)
     private color: string;
@@ -25,11 +25,11 @@ class Camiseta {
 
 }
 
-var camiseta = new Camiseta("rojo", "Manga Larga","nike", "L", 14);//instanciar de la clase para crear un objeto
-camiseta.setColor("Rojo");
-//camiseta.getColor();
+// var camiseta = new Camiseta("rojo", "Manga Larga","nike", "L", 14);//instanciar de la clase para crear un objeto
+// camiseta.setColor("Rojo");
+// //camiseta.getColor();
 
 
 
-console.log(camiseta.getColor());
+// console.log(camiseta.getColor());
 
