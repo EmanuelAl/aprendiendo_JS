@@ -9,6 +9,13 @@ class Camiseta {
     private precio: number;
 
     //Metodos (funciones o acciones del objeto)
+    constructor(color, modelo, marca, talla, precio){//se usa para definir los valores de las propiedades al instanciar un objeto
+        this.color = color;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.talla = talla;
+        this.precio = precio;
+    }
     public setColor(color) {
         this.color = color;
     }
@@ -18,15 +25,11 @@ class Camiseta {
 
 }
 
-var camiseta = new Camiseta();//instanciar de la clase para crear un objeto
+var camiseta = new Camiseta("rojo", "Manga Larga","nike", "L", 14);//instanciar de la clase para crear un objeto
 camiseta.setColor("Rojo");
 //camiseta.getColor();
 
 
-var playera = new Camiseta();
-playera.setColor("Azul");
-//playera.getColor("Azul");
 
-
-console.log(camiseta.getColor(), playera.getColor());
+console.log(camiseta.getColor());
 
