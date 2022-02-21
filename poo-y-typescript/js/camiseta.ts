@@ -34,12 +34,29 @@ class Camiseta implements CamisetaBase{
     }
 
 }
+//Clase hija la que hereda todo de la clase camiseta
+class Sudadera extends Camiseta{
+    public capucha: boolean;
+
+    setCapucha(capucha:boolean){
+        this.capucha = capucha;
+    }
+    getCapucha(){
+        return this.capucha;
+    }
+}
+
+
+
 
 var camiseta = new Camiseta("rojo", "Manga Larga","nike", "L", 14);//instanciar de la clase para crear un objeto
 // camiseta.setColor("Rojo");
 // //camiseta.getColor();
 
+var sudadera_nike = new Sudadera("Rojo","Manga larga","Nike","L",30);
+sudadera_nike.setCapucha(true);
+sudadera_nike.setColor("Gris");
 
 
-console.log(camiseta);
+console.log(sudadera_nike);
 
