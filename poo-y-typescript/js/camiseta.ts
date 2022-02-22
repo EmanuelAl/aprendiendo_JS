@@ -8,6 +8,20 @@ interface CamisetaBase{
 'implements NombreInterface' */
 
 
+//decorador : nos permite agregar una nueva funcionalidad a una clase que queramos
+function estampar(logo: string){
+    return function(target: Function){
+        target.prototype.estampacion = function():void{
+            console.log("Camiseta estampada con el logo de: "+logo);
+        }
+    }
+}
+
+
+
+
+@estampar('Gucci Gang')//no le ponemos ';' porque así se aplica el decorador a la clase que sigue,
+// en este caso es la clase Camiseta que adoptara la nueva funcionalidad 
 //Clase (molde del objeto)
 class Camiseta implements CamisetaBase{
 
@@ -52,6 +66,9 @@ class Sudadera extends Camiseta{
 var camiseta = new Camiseta("rojo", "Manga Larga","nike", "L", 14);//instanciar de la clase para crear un objeto
 // camiseta.setColor("Rojo");
 // //camiseta.getColor();
+console.log(camiseta);
+camiseta.estampacion();
+
 
 var sudadera_nike = new Sudadera("Rojo","Manga larga","Nike","L",30);
 sudadera_nike.setCapucha(true);
