@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'Welcome to';
+  public mostrar_videojuegos: boolean = true;
+
+  ocultarVideojuego(value: any){
+    this.mostrar_videojuegos = value;
+  }
 }

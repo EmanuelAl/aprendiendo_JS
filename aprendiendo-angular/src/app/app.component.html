@@ -352,7 +352,11 @@
 
   <!-- Resources -->
 
-  <videojuego></videojuego>
+  <button (click)="ocultarVideojuego(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
+  <button (click)="ocultarVideojuego(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
+
+
+  <videojuego *ngIf="mostrar_videojuegos"></videojuego>
   <zapatillas></zapatillas>
   <cursos></cursos>
 
