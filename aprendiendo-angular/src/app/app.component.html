@@ -325,7 +325,13 @@
     </a>
 </div>
 
-<div class="content" role="main">
+<div class="content" role="main" 
+[ngStyle]="{
+          'background': config.fondo,
+          'padding': '20px',
+          'border': '5px solid red',
+          'border-color': 'black'
+}">
 
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
@@ -350,8 +356,9 @@
 
   </div>
 
+  
   <!-- Resources -->
-
+  <p>{{descripcion}}</p>
   <button (click)="ocultarVideojuego(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
   <button (click)="ocultarVideojuego(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
 
@@ -361,7 +368,7 @@
   <cursos></cursos>
 
 
-
+  
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
 
