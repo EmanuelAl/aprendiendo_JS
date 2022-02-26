@@ -1,6 +1,5 @@
 <h2>{{titulo}}</h2>
 <ul>
-    <li>Reebok Classic</li>
-    <li>Fila retro</li>
-    <li>Adidas Yezzy</li>
+    <li *ngFor="let deportiva of zapatillas">
+        {{deportiva.nombre}}-{{deportiva.precio}}</li>
 </ul>

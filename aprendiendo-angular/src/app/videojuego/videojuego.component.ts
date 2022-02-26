@@ -28,14 +28,14 @@ o hagamos un cambio en el componente, etc*/
 //ngOnInit() es un hook que se ejecuta
 //al iniciar el componente
     ngOnInit(){
-        console.log("OnInit ejecutado");
+        // console.log("OnInit ejecutado");
     }
 /*ngDoCheck es un hook que se ejecuta
 cuando se produce algun cambio en el 
 componente o en la aplicacion de 
 angular */
     ngDoCheck(){
-        console.log("DoCheck ejecutado");
+        // console.log("DoCheck ejecutado");
     }
 /*ngOnDestroy es un hook que nos sirve 
 para que se ejecute algo antes de eliminar
@@ -43,7 +43,7 @@ la instancia de un componente o cuando
 se destruya el componente osea cuando se
 deje de mostrar en la vista*/
     ngOnDestroy(): void {
-        console.log("OnDestroy ejecutado");
+        // console.log("OnDestroy ejecutado");
     }
 /* metodo para demostrar como funciona
 el DoCheck*/
