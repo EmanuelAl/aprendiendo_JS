@@ -11,7 +11,7 @@ export class ZapatillasComponent implements OnInit {
 
     constructor(){
         this.zapatillas = [
-            new Zapatilla('Nike Airmax','Nike','Rojas', 190, true),
+            new Zapatilla('Nike Airmax','Nike','Rojas', 40, true),
             new Zapatilla('Reebook Classic','Reebook','Blanco', 80, true),
             new Zapatilla('Nike Runner MD','Nike','Negras', 60, true),
             new Zapatilla('Adidas Yezzy','Adidas','Gris', 180, false)

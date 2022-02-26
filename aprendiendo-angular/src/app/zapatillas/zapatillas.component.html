@@ -1,5 +1,13 @@
 <h2>{{titulo}}</h2>
 <ul>
     <li *ngFor="let deportiva of zapatillas">
-        {{deportiva.nombre}}-{{deportiva.precio}}</li>
+        {{deportiva.nombre}}-{{deportiva.precio}}$
+    
+        <span *ngIf="deportiva.precio < 80" 
+        [style.background]="deportiva.precio < 80 ? 'green' : 'transparent'"
+        [style.color]="deportiva.precio < 80 ? 'white' : 'black'"
+        >¡EN OFERTA!</span>
+    </li>
+
+        
 </ul>
