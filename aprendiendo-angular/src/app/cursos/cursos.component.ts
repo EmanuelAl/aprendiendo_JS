@@ -18,13 +18,20 @@ export class CursosComponent implements OnInit {
 
   ngOnInit(): void {
     //para capturar parametros por la url
+    //por la ruta de cursos
     this._route.params.subscribe((params: Params)=>{
         
         this.nombre = params['nombre'];
         this.followers = +params['followers'];
         // console.log(this.nombre) ;
         //console.log(typeof +params['followers']) ;
+
+        if(this.nombre == 'ninguno'){
+          this._router.navigate(['/home']);
+        }
     });
   }
-
+  redirigir(){
+    this._router.navigate(['/videojuego']);
+  }
 }
