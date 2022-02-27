@@ -3,3 +3,11 @@
     font-size: 18px;
     color: grey;
 }
+
+.fondoRojo{
+    background-color: red;
+}
+
+.subrayado {
+    text-decoration: underline;
+}
