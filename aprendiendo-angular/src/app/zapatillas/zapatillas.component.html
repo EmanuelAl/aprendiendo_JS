@@ -19,7 +19,8 @@
 <ul>
     <li *ngFor="let deportiva of zapatillas">
             <span [ngStyle]="{ 'text-decoration': !deportiva.stock ? 'line-through' : 'none'}"
-            >{{deportiva.nombre}}-{{deportiva.precio}}$</span>
+            >{{deportiva.nombre}}-
+            <strong [class.altoPrecio]="deportiva.precio >= 80">{{deportiva.precio}}$</strong></span>
     
             <span *ngIf="deportiva.precio < 80" 
             [style.background]="deportiva.precio < 80 ? 'green' : 'transparent'"
