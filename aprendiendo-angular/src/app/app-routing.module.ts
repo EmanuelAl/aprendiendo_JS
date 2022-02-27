@@ -9,13 +9,21 @@ import { CursosComponent } from './cursos/cursos.component';
 
 
 const routes: Routes = [
+  //las rutas de los componentes
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'zapatillas', component: ZapatillasComponent},
   {path: 'videojuego', component: VideojuegoComponent},
   {path: 'cursos', component: CursosComponent},
+  {path: 'cursos/:nombre/:followers', component: CursosComponent},
   {path: '**', component: HomeComponent}
 ];
+/*
+path: 'cursos/:nombre' asi definimos el nombre 
+del paramtero que capturara lo que escribimos
+luego del curso/
+  {path: 'cursos/:nombre', component: CursosComponent},
+*/
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

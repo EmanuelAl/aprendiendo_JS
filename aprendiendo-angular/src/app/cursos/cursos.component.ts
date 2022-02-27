@@ -1,26 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-/*ademas de importar la clase componente
-importamos los hooks/eventos de ciclo de vida
-del component : OnInit,   */
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 @Component({
   selector: 'cursos',
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent implements OnInit {
+  public nombre: string;
+  public followers: any;
 
-  constructor() { }
-//Hooks/ eventos de cliclo de vida del componente
-/* son eventos que se ejecutan en un momendo dado
-del cilo de vida del componente...
-son eventos que se van a lanzar dependiendo
-del estado en el que se encuentre el componente, 
-por ejemplo cuando iniciemos el componente
-o hagamos un cambio en el componente, etc*/
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router) {
+      this.nombre= '';
+     }
 
-//ngOnInit() es un hook que se ejecuta
-//al iniciar el componente
   ngOnInit(): void {
+    //para capturar parametros por la url
+    this._route.params.subscribe((params: Params)=>{
+        
+        this.nombre = params['nombre'];
+        this.followers = +params['followers'];
+        // console.log(this.nombre) ;
+        //console.log(typeof +params['followers']) ;
+    });
   }
 
 }
