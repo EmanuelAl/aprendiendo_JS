@@ -7,6 +7,7 @@ import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { ExternoComponent } from './externo/externo.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 const routes: Routes = [
   //las rutas de los componentes
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'cursos', component: CursosComponent},
   {path: 'cursos/:nombre/:followers', component: CursosComponent},
   {path: 'externo', component: ExternoComponent},
+  {path: 'contacto', component: ContactoComponent},
   {path: '**', component: HomeComponent}
 ];
 /*
