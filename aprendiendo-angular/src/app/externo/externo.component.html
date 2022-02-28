@@ -1,3 +1,13 @@
+<!-- lo que esta despues de fecha | ..
+es el uso de una pipe/filtro
+que son pequeñas funcionalidades que podemos
+agregar a nuestra vista para hacer pequeñas tareas-->
+{{fecha | date:'fullDate'}} <br><!--formateamos la fecha con el pipe -->
+{{fecha | date:'dd/MM/yy' }}<br> 
+{{'HOLA MUNDO USANDO PIPES' | lowercase}} <br><!--pipe para pasar texto a minusculas -->
+{{'hola mundo usando pipes' | uppercase}}<!--pipe para pasar texto a mayusculas -->
+
+<hr>
 <input type="text" [(ngModel)]="userId" (keyup.enter)="cargarUsuario()">
 
 <div *ngIf="!user">

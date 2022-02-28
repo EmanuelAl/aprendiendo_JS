@@ -10,6 +10,7 @@ import { PeticionesService } from '../services/peticiones.service';
 export class ExternoComponent implements OnInit {
   public user: any;
   public userId: any;
+  public fecha: any;
 
   constructor(
     private _peticionesService: PeticionesService //injecto este servicio en la propiedad para utlizar sus metodos
@@ -19,6 +20,7 @@ export class ExternoComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarUsuario();
+    this.fecha = new Date();
   }
 
   cargarUsuario() {
