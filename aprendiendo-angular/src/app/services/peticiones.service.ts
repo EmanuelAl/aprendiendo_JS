@@ -14,4 +14,11 @@ export class PeticionesService{
     getUser(userId: any): Observable<any>{
         return this._http.get(this.url+'/api/users/'+userId);//peticion ajax a la api de un solo usuario
     }
+
+    addUser(user: any): Observable<any>{//para agregar un usuario, para hacer un post
+        let paramsJson = JSON.stringify(user);//para convertir el user en un json string
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+
+        return this._http.post(this.url+'/api/users',paramsJson,{headers: headers} );//peticion post ajax
+    }
 }
