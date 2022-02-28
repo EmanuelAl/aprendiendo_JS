@@ -5,8 +5,8 @@ agregar a nuestra vista para hacer pequeñas tareas-->
 {{fecha | date:'fullDate'}} <br><!--formateamos la fecha con el pipe -->
 {{fecha | date:'dd/MM/yy' }}<br> 
 {{'HOLA MUNDO USANDO PIPES' | lowercase}} <br><!--pipe para pasar texto a minusculas -->
-{{'hola mundo usando pipes' | uppercase}}<!--pipe para pasar texto a mayusculas -->
-
+{{'hola mundo usando pipes' | uppercase}}<br><!--pipe para pasar texto a mayusculas -->
+{{4 | calculadora: 2 }} <!--usando nuestra pipe calculadora -->
 <hr>
 <input type="text" [(ngModel)]="userId" (keyup.enter)="cargarUsuario()">
 
