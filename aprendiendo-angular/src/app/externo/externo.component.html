@@ -37,7 +37,13 @@ agregar a nuestra vista para hacer pequeñas tareas-->
         <h3>{{usuario_guardado.name}}</h3>
         <h3>{{usuario_guardado.job}}</h3>
     </div>
-
+    <!-- para enlistar y mostrar los usuarios que se guardar -->
+    <h2>Lista de usuarios guardados:</h2>
+    <div *ngFor="let elemento of arrayUsuariosGuardados">
+        
+        <p>nombre usuario: {{elemento.name}} -- trabajo: {{elemento.job}}</p>
+        <p></p>
+    </div>
 
 
 <hr>

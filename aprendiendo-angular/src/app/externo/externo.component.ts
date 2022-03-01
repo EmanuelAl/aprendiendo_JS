@@ -14,8 +14,11 @@ export class ExternoComponent implements OnInit {
 
   public new_user: any;
   public usuario_guardado: any;
+  public arrayUsuariosGuardados: Array<any>;
+  
 
   constructor(
+    
     private _peticionesService: PeticionesService //injecto este servicio en la propiedad para utlizar sus metodos
   ) {
     this.userId = 1;
@@ -23,6 +26,7 @@ export class ExternoComponent implements OnInit {
       "name": "",
       "job": ""
   }
+  this.arrayUsuariosGuardados = new Array();
    }
 
   ngOnInit(): void {
@@ -47,6 +51,7 @@ export class ExternoComponent implements OnInit {
       response => {
           console.log(response);
           this.usuario_guardado= response;
+          this.arrayUsuariosGuardados.push(this.usuario_guardado);
           form.reset();
 
       },
