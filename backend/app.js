@@ -17,18 +17,43 @@ app.use(bodyParser.json());//usamos bodyparser para que cualquier dato que me ll
 
 //CORS
 
-// RUTAS
+// **************RUTAS (endpoint)*****************
 // primer ejemplo RUTA:
 app.get('/test',(request,response) => {
     response.status(200).send({
         message: "Hola mundo desde mi API de NodeJS"
     });
 });
+app.post('/test',(request,response) => {//peticion para hacer envios de datos/guardar datos que se le envian al servidor
+    //console.log(request);//imprime los datos que estoy enviando al servidor
+    //console.log(request.body.nombre);//recogemos los datos que enviamos a traves del body, en este caso recogemos el nombre que estamos enviando
+    console.log(request.query.web);//http://localhost:3700/test?web=youtbe.com en 'postman' por post enviamos 
+    //en la url el parametro youtbe.com y lo mostramos con request.query.web, en consola imprime "youtbe.com"
+
+    //video del curso explicativo del tema: nro220
+    response.status(200).send({
+        message: "respuesta post de mi API de NodeJS"
+    });
+});
+//Ejemplo para usar el request.params para capturar parametro en url 'id'  :
+
+app.post('/test/:id',(request,response) => { //http://localhost:3700/test/88?web=youtbe.com en 'postman' por post enviamos 
+ //en la url el id y lo mostramos con request.params.id 
+    console.log(request.params.id);//imprime por consola el 88, que es id que pasamos por url
+
+   //video del curos explicativo del tema: nro220
+    response.status(200).send({
+        message: "respuesta post de mi API de NodeJS con parametro id en url"
+    });
+});
+
+
+
 // segundo ejemplo RUTA:
 app.get('/',(request,response) => {
     response.status(200).send(
      "<h1>Pagina de inicio</h1>"
     );
 });
-// exportar 
+//***************  exportar ***************
 module.exports = app;
