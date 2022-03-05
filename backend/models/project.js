@@ -8,7 +8,8 @@ var ProjectSchema = Schema({ //definimos el objeto molde
     descripcion: String,
     category: String,
     year: Number,
-    lang: [String]
+    lang: String,
+    image: String
 });
             //mongoose.model( nombre entidad, esquema);
 module.exports = mongoose.model('Project',ProjectSchema);
