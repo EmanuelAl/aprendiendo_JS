@@ -102,8 +102,23 @@ var controller = {
                 project: projectUpdate
             });
         });
-    }
+    },
+    deleteProject(req, res){//para eleminar un projecto por id 
+        let projectId = req.params.id;
+//Aclaracion:
+//.findByIdAndRemove y findByIdAndDelete hacen lo mismo, eliminan 
 
+        Project.findByIdAndRemove(projectId, (err, projectRemoved) => {
+            if(err) return res.status(500).send({message:'No se ha podido borrar el proyecto'});
+
+            if(!projectRemoved) return res.status(404).send({message:'No se puede eliminar ese proyecto'});
+
+            return res.status(200).send({//devuelve el objeto eliminado
+                project: projectRemoved
+            });
+        });
+
+    }
 
 
 
