@@ -8,5 +8,7 @@ var router = express.Router();//usamos este servicio Router() para crear rutas
 router.get('/home',ProjectController.home);
 router.post('/test',ProjectController.test);
 router.post('/save-project', ProjectController.saveProject);
-
+router.get('/project/:id?',ProjectController.getProject);//para  consulta un project
+                  // :id asi es obligatorio con los :
+                  // :id? asi es opcional  
 module.exports = router;
