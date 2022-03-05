@@ -86,7 +86,24 @@ var controller = {
             return res.status(200).send({projects});//devuelve un array de objetos 
         });
 
+    },
+
+    updateProject(req, res){//para actualizar un project por id
+        var projectId = req.params.id;//recoge el parametro id que pasamos por url
+        var update = req.body;//lo que pasamos por el body representa lo que queramos actualizar
+        //{new: true} para que el metodo devuelva el objeto actualizado(y no el antiguo )cuando se hace el res.status(200)
+        Project.findByIdAndUpdate(projectId, update, { new:true }, (err, projectUpdate) => {
+
+            if(err) return res.status(500).send({message:'Error al actualizar'});
+
+            if(!projectUpdate) return res.status(404).send({message:'No existe el proyecto para actualizar'});
+
+            return res.status(200).send({
+                project: projectUpdate
+            });
+        });
     }
+
 
 
 

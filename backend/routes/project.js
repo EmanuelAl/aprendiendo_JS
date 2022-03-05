@@ -12,5 +12,6 @@ router.get('/project/:id?',ProjectController.getProject);//para  consulta un pro
                   // :id asi es obligatorio con los :
                   // :id? asi es opcional  
 router.get('/projects',ProjectController.getProjects);//para obtener la lista de todos los proyectos
+router.put('/project/:id',ProjectController.updateProject);//para actualizar un projecto pasando el id por url
 
 module.exports = router;
