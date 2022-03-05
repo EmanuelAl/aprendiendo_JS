@@ -118,6 +118,40 @@ var controller = {
             });
         });
 
+    },
+
+    uploadImage(req,res){
+        let projectId = req.params.id;
+        let fileName = 'Imagen no subida...';
+
+        if(req.files){
+            let filePath = req.files.image.path;
+            let fileSplit = filePath.split('\\');//recortamos la ruta del archivo el path
+            let fileName = fileSplit[1];//indicamos que el nombre del archivo estaria en el indica uno 
+
+
+            Project.findByIdAndUpdate(projectId, {image: fileName},{new: true},(err, projectUpdate) => {
+                if(err) return res.status(200).send({message:'La imagen no se ha subido'});
+
+                if(!projectUpdate) return res.status(404).send({message: 'El proyecto no existe y no se ha asignado la imagen'});
+
+                return res.status(200).send({
+                    project: projectUpdate
+                });
+            });
+
+
+            // console.log(req.files);
+            // return res.status(200).send({
+            //     files: fileName
+            // });
+        }else{
+            return res.status(200).send({
+                message: fileName
+            });
+        }
+
+
     }
 
 
