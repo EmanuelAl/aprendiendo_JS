@@ -69,6 +69,23 @@ var controller = {
                 project
             });
         });
+    },
+
+    getProjects(req,res){//para obtener la lista de todos los proyectos
+        //.find({}) es tambien un metodo mongoose
+        //.find({}) puesto asi el metodo trae la lista de todos los projects
+        //.find({year: 2019}) puesto asi filtraria la lista y traeria solo los projects que tengan ese parametro, osea en este ejemplo, los que coincidan con el year : 2019
+        //.find({}).sort('year') me ordena la lista por año de menor a mayor,es decir, de mas antiguo a mas nuevo
+        //.find({}).sort('-year') me ordena la lista por año de mayor a menor
+        Project.find({}).exec((err, projects) => {
+           
+            if(err) return res.status(500).send({message:'Error al devolver los datos'});
+
+            if(!projects) return res.status(404).send({message:'No hay proyectos que mostrar'});
+
+            return res.status(200).send({projects});//devuelve un array de objetos 
+        });
+
     }
 
 
