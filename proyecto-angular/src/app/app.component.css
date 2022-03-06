@@ -38,7 +38,7 @@ header  a {
 
 header a:hover,.actived {
     background: black;
-    color:white;
+    /* color:white; */
     text-shadow: 1px 1px 1em  red,1px 1px 1em  red,1px 1px 1em  red;
 }
 /* logo */
