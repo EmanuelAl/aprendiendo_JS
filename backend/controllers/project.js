@@ -9,7 +9,7 @@ de project*/
 
 
 var Project = require('../models/project');
-
+var fs = require('fs');//libreria file system para borrar un archivo 
 
 var controller = {
     home: function(require,response){
@@ -103,6 +103,7 @@ var controller = {
             });
         });
     },
+    
     deleteProject(req, res){//para eleminar un projecto por id 
         let projectId = req.params.id;
 //Aclaracion:
@@ -120,25 +121,35 @@ var controller = {
 
     },
 
-    uploadImage(req,res){
+    uploadImage(req,res){//para subir archivos de imagenes
         let projectId = req.params.id;
         let fileName = 'Imagen no subida...';
 
         if(req.files){
             let filePath = req.files.image.path;
+            //usamos el metodo de cadenas .split() para recortar string, este metodo devuelve un array
             let fileSplit = filePath.split('\\');//recortamos la ruta del archivo el path
-            let fileName = fileSplit[1];//indicamos que el nombre del archivo estaria en el indica uno 
+            let fileName = fileSplit[1];//indicamos que el nombre del archivo estaria en el indice uno 
+            let extSplit = fileName.split('\.');//recortamos por el . del archivo para obtener la extension
+            let fileExt = extSplit[1];//en el indice 1 esta la extension
 
-
-            Project.findByIdAndUpdate(projectId, {image: fileName},{new: true},(err, projectUpdate) => {
-                if(err) return res.status(200).send({message:'La imagen no se ha subido'});
-
-                if(!projectUpdate) return res.status(404).send({message: 'El proyecto no existe y no se ha asignado la imagen'});
-
-                return res.status(200).send({
-                    project: projectUpdate
+            if(fileExt == 'png' ||  fileExt == 'jpg' ||  fileExt == 'jpeg' ||  fileExt == 'gif'){//se guardara el archivo si la extension coincide con estas opciones
+                Project.findByIdAndUpdate(projectId, {image: fileName},{new: true},(err, projectUpdate) => {
+                    if(err) return res.status(200).send({message:'La imagen no se ha subido'});
+    
+                    if(!projectUpdate) return res.status(404).send({message: 'El proyecto no existe y no se ha asignado la imagen'});
+    
+                    return res.status(200).send({
+                        project: projectUpdate
+                    });
                 });
-            });
+            }else{
+
+                fs.unlink(filePath, (err) => {
+                    return res.status(200).send({message:'La extension no es valida'});
+                });
+            }
+            
 
 
             // console.log(req.files);
