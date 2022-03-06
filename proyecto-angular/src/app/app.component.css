@@ -36,7 +36,7 @@ header  a {
     transition: all 300ms;
 }
 
-header a:hover {
+header a:hover,.actived {
     background: black;
     color:white;
     text-shadow: 1px 1px 1em  red,1px 1px 1em  red,1px 1px 1em  red;
@@ -61,4 +61,11 @@ header #logo:hover {
     border-left: 1px solid #b7b7b7;
     border-right: 1px solid #b7b7b7;
     padding-top:120px;
+}
+/* pie de pagina*/
+footer{
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 15px;
+    color:rgba(0, 0, 0, 0.5);
 }
