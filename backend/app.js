@@ -19,6 +19,15 @@ app.use(bodyParser.urlencoded({extended:false}));//config necesaria para el body
 app.use(bodyParser.json());//usamos bodyparser para que cualquier dato que me llegue por post lo convierta en un objeto json
 
 //CORS
+// Configurar cabeceras y cors
+app.use((req, res, next) => {//se ejecuta antes de cada peticion, como un middlewares
+    res.header('Access-Control-Allow-Origin', '*');//el atedisco * cuando vayamos a publicar nuestra web app tenemos que reemplazar lo por la url permitida o origen permitido
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});//con este trozo de codigo no tendremos problemas para trabajar desde el frontend, cuando tengamos que hacer muchas 
+//peticiones ajax al backend , para evitar fallos basicamente , para permitir el acceso de un dominio a otro
 
 
 
@@ -60,10 +69,6 @@ app.use(bodyParser.json());//usamos bodyparser para que cualquier dato que me ll
 // });
 // RUTAS (endpoint)
 app.use('/api', project_routes);
-
-
-
-
 
 
 //***************  exportar ***************
