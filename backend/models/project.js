@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var ProjectSchema = Schema({ //definimos el objeto molde
     name: String,
-    descripcion: String,
+    description: String,
     category: String,
     year: Number,
     langs: String,
