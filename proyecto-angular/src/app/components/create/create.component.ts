@@ -11,12 +11,14 @@ import { ProjectService } from 'src/app/services/project.service';
 export class CreateComponent implements OnInit {
   public title: string;
   public project: Project;
+  public status: string;
 
   constructor(
     private _projectService: ProjectService
   ) {
     this.title = "Crear proyecto";
     this.project = new Project('','','','',2019,'','');
+    this.status = '';
     /*
      public id: string,
         public name: string,
@@ -32,8 +34,21 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(form: any){
-    console.log(this.project);
+  onSubmit(form: any){//guarda proyectos
+    // console.log(this.project);
+    this._projectService.saveProject(this.project).subscribe(
+      response => {
+        if(response.project){
+          this.status = 'success';
+          form.reset();
+        }else {
+          this.status = 'failed';
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 
 }

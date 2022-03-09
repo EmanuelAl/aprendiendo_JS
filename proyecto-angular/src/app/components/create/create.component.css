@@ -62,3 +62,24 @@ form input[disabled] {
     opacity: .4;
     cursor: not-allowed;
 }
+/* para el mensaje de exito o no, 
+al crear el project*/
+.message {
+    width: 50;
+    padding: 5px;
+    border: 1px solid #eee;
+}
+.success {
+    background: green;
+    color: white;
+}
+.message a {
+    color: white;
+}
+
+.failed {
+    background: red;
+    color: white;
+}
+
+
