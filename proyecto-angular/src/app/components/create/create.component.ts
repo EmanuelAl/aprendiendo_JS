@@ -33,7 +33,7 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit(form: any){
-
+    console.log(this.project);
   }
 
 }
