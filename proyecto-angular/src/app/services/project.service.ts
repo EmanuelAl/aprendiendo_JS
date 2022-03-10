@@ -1,4 +1,4 @@
-import { Inject, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";//para poder hacer peticiones ajax
 import { Observable } from "rxjs";
 import { Project } from "../models/project";

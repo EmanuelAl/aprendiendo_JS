@@ -44,7 +44,10 @@
         </p>
         <p>
             <label for="image">Imagen del proyecto</label>
-            <input type="file" name="image" placeholder="subir imagen">
+            <input type="file" name="image" placeholder="subir imagen" (change)="fileChangeEvent($event)">
+            <!--(change) es otro evento que implementa el metodo que lo llamamos fileChangeEvent($event)
+            para capturar (cuando se produzca un cambio en el input) todos los datos que haya
+        capturado el input -->
         </p>
 
         <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
