@@ -24,4 +24,9 @@ export class ProjectService {
 
         return this._http.post(this.url+'save-project', params, {headers: headers});//alta de peticion
     }
+    getProjects(): Observable<any>{
+        let headers = new HttpHeaders().set('Content-type','application/json');
+
+        return this._http.get(this.url+'projects',{headers: headers});
+    }
 }

@@ -13,7 +13,7 @@ export class UploadService{
             // definimos la piticion ajax
             //para esto simulamos un formulario clasico de la sig manera
             let formData:any = new FormData();//este obejto nos va a permitir crear una especie de formulario en un objeto
-            var xhr = new XMLHttpRequest();//tipico objeto de peticiones ajax asincornas
+            var xhr = new XMLHttpRequest();//tipico objeto de peticiones ajax asincronas, xhr es un sinónimo de ajax
 
             for(var i = 0; i < files.length; i++){//recorre el array de archivos files
                 formData.append(name, files[i], files[i].name );//agregamos los datos al formulario
