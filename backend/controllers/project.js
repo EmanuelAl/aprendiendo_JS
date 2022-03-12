@@ -10,6 +10,7 @@ de project*/
 
 var Project = require('../models/project');
 var fs = require('fs');//libreria file system para borrar un archivo 
+var path = require('path'); //cargamos modulo path para poder trabajar y cargar rutas fisicas de nuestros sistemas de archivos
 
 var controller = {
     home: function(require,response){
@@ -163,6 +164,21 @@ var controller = {
         }
 
 
+    },
+
+    getImageFile(req, res){
+        let file = req.params.image;// el .image hace referencia al nombre del archivo de la imagen que pasaremos por url
+        let path_file = './uploads/'+file;
+
+        fs.exists(path_file, (exists) => {
+            if(exists){
+                return res.sendFile(path.resolve(path_file));
+            }else{
+                return res.status(200).send({
+                    message: 'No existe la imagen...'
+                });
+            }
+        });
     }
 
 

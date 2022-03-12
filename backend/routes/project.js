@@ -18,4 +18,6 @@ router.get('/projects',ProjectController.getProjects);//para obtener la lista de
 router.put('/project/:id',ProjectController.updateProject);//para actualizar un projecto pasando el id por url
 router.delete('/project/:id',ProjectController.deleteProject);//para borrar/eliminar un projecto pasando el id por url
 router.post('/upload-image/:id', multipartMiddleware,ProjectController.uploadImage);//para poder subir archivos y actualizar por id de project
+router.get('/get-image/:image',ProjectController.getImageFile);
+
 module.exports = router;
