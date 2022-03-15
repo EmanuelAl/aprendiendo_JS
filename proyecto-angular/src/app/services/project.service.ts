@@ -24,9 +24,15 @@ export class ProjectService {
 
         return this._http.post(this.url+'save-project', params, {headers: headers});//alta de peticion
     }
-    getProjects(): Observable<any>{
+    getProjects(): Observable<any>{//para obtener el array de todos los proyectos
         let headers = new HttpHeaders().set('Content-type','application/json');
 
         return this._http.get(this.url+'projects',{headers: headers});
+    }
+
+    getProject(id: any): Observable<any>{// para obtener un proyecto 
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.get(this.url+'project/'+id, {headers: headers});
     }
 }
