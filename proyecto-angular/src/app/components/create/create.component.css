@@ -31,23 +31,7 @@ form textarea {
     padding: 5px;
 }
 
-form button,
-form input[type="submit"] {
-    display: block;
-    font-size: 17px;
-    padding: 10px;
-    margin-top: 15px;
-    color: white;
-    background:  rgba(226, 13, 13, 1);
-    border: 1px solid rgb(48 10 10);
-    cursor: pointer;
-}
-form button :hover,
-form input[type="submit"]:hover {
 
-    background:  rgba(226, 13, 13, .8);
-    border: 1px solid rgb(48 10 10);
-}
 /* estilos a los mensajes de error
 en el formulario*/
 .form-error {

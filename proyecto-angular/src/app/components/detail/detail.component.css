@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 360px;
+    justify-content: space-around;
+}
+
+.container img{
+    /* min-width: 360px; */
+    max-width: 400px;
+    width: 100%;
+    /* margin: 0 60px; */
+    /* float: left; */
+}
+.data {
+    min-width: 360px;
+}
+.data p{
+    /* display: flex;
+    width: 250px;
+    justify-content: space-around; */
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    max-width: 500px;
+    width: 100%;
+}
+.button-edit,.button-delete{
+    /* display: block; */
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+}
+.button-edit {
+    background:orange;
+}
+.button-edit:hover {
+    background:rgb(187, 130, 24);
+}
+
+.button-delete {
+    background: red;
+}
+
+.button-delete:hover {
+    background: rgb(182, 13, 13);
+}
