@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" *ngIf="project">
     <h2>{{title}}</h2>
     <div class="message success" *ngIf="status == 'success'">
         El proyecto se ha creado correctamente, puedes <a [routerLink]="['/proyecto', save_project._id]">verlo aquí</a>
@@ -44,6 +44,10 @@
         </p>
         <p>
             <label for="image">Imagen del proyecto</label>
+            <span class="image" *ngIf="project.image" style="float: none;"><!--si existe imagen la mostrara-->
+                <img src="{{url+'get-image/'+ project.image}}" *ngIf="project.image" alt="imagen de proyecto" width="100px" >
+            </span>
+            <br>
             <input type="file" name="image" placeholder="subir imagen" (change)="fileChangeEvent($event)">
             <!--(change) es otro evento que implementa el metodo que lo llamamos fileChangeEvent($event)
             para capturar (cuando se produzca un cambio en el input) todos los datos que haya

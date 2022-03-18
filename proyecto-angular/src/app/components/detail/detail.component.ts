@@ -4,6 +4,7 @@ import { Global } from 'src/app/services/global';
 import { Project } from 'src/app/models/project';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -12,7 +13,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
   public url: String;
-  public project: any
+  public project: any;
+  public confirm: boolean;
 
   constructor(
     private _projectService: ProjectService,
@@ -21,11 +23,12 @@ export class DetailComponent implements OnInit {
     
   ) { 
     this.url = Global.url;
+    this.confirm = false;
   }
 
   ngOnInit(): void {
     this._route.params.subscribe(params => {
-        let id = params['id'];
+        let id = params['id'];//recoge de la url el id
 
         this.getProject(id);
     });
@@ -41,6 +44,10 @@ export class DetailComponent implements OnInit {
         }
       );
   }
+  setConfirm(confirm: boolean){
+      this.confirm = confirm;
+  }
+
   deleteProject(id: any){
     this._projectService.deleteProject(id).subscribe(
       response => {

@@ -3,16 +3,16 @@ import { Project } from 'src/app/models/project';
 import { ProjectService } from 'src/app/services/project.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { Global } from 'src/app/services/global';
-
+import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css'],
+  selector: 'app-edit',
+  templateUrl: '../create/create.component.html',//indicamos la vista que vamos a utilizar en este, reutilizamos la vista de create
+  styleUrls: ['./edit.component.css'],
   providers: [ProjectService, UploadService]//cargamos los servicios
 })
-export class CreateComponent implements OnInit {
+export class EditComponent implements OnInit {
   public title: string;
-  public project: Project;
+  public project: any;
   public status: string;
   // public filesToUpload: any;
   public filesToUpload: Array<File>;
@@ -23,15 +23,15 @@ export class CreateComponent implements OnInit {
     private _projectService: ProjectService,
     private _uploadService: UploadService,
     // public filesToUpload: Array<File>
-    
+    private _route: ActivatedRoute,
+    private _Router: Router
   ) {
-    this.title = "Crear proyecto";
-    this.project = new Project('','','','',2019,'','');
+    this.title = "Editar proyecto";
     this.status = '';
     this.filesToUpload =new Array();
     this.url = Global.url;
     /*
-     public id: string,
+     public _id: string,
         public name: string,
         public description: string,
         public category: string,
@@ -41,28 +41,44 @@ export class CreateComponent implements OnInit {
     */
 
    }
+   ngOnInit(): void {
+    this._route.params.subscribe(params => {
+        let id = params['id'];
 
-  ngOnInit(): void {
+        this.getProject(id);
+    });
   }
 
+  getProject(id: any){
+      this._projectService.getProject(id).subscribe(
+        response => {
+            this.project = response.project;
+        },
+        error => {
+            console.log(<any>error);
+        }
+      );
+  }
   onSubmit(form: any){//guarda proyectos
     // console.log(this.project);
-    this._projectService.saveProject(this.project).subscribe(
+    this._projectService.updateProject(this.project).subscribe(
       response => {
         if(response.project){
           
           //subir la imagen 
           if(this.filesToUpload){//pregunta si existe archivo antes de subir
-              this._uploadService.makeFileRequest(Global.url+'upload-image/'+response.project._id, [], this.filesToUpload, 'image').then((result: any)=>{
-                // console.log(result);
-                this.save_project = result.project;
-                this.status = 'success';
-                form.reset();
-              });
+            this._uploadService.makeFileRequest(Global.url+'upload-image/'+response.project._id, [], this.filesToUpload, 'image').then((result: any)=>{
+              // console.log(result);
+              this.save_project = result.project;
+              this.status = 'success';
+              // form.reset();
+            });
           }else {
             this.save_project = response.project;
             this.status = 'success';
           }
+          
+          
         }else {
           this.status = 'failed';
         }
@@ -78,5 +94,4 @@ export class CreateComponent implements OnInit {
     //filesToUpload archivos para subir
     this.filesToUpload = <Array<File>>fileInput.target.files;//casteamos los archivos a subir
   }
-
 }

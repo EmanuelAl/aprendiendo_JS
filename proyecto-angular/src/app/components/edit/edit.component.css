@@ -1,0 +1,67 @@
+/*Seccion de formulario */
+.container{
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.container h2{
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+form {
+    width: 80%;
+}
+
+form label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea {
+    width: 40%;
+    padding: 5px;
+}
+
+
+/* estilos a los mensajes de error
+en el formulario*/
+.form-error {
+    font-size: 0.8rem;
+    padding: 3px;
+    background: red;
+    color: white;
+    margin-left: 5px;
+}
+
+form input[disabled] {
+    opacity: .4;
+    cursor: not-allowed;
+}
+/* para el mensaje de exito o no, 
+al crear el project*/
+.message {
+    width: 50;
+    padding: 5px;
+    border: 1px solid #eee;
+}
+.success {
+    background: green;
+    color: white;
+}
+.message a {
+    color: white;
+}
+
+.failed {
+    background: red;
+    color: white;
+}
+

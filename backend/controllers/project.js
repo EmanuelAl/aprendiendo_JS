@@ -32,7 +32,7 @@ var controller = {
         //y crear y preparar el objeto
         let params = req.body;
         project.name = params.name;
-        project.description = params.descripcion;//corrigo project.descripcion por project.description
+        project.description = params.description;//corrigo project.descripcion por project.description
         project.category = params.category;
         project.year = params.year;
         project.langs = params.langs;
