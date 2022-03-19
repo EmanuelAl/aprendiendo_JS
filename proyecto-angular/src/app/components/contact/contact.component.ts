@@ -10,6 +10,12 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
+    $("#logo").click(function(e){
+      e.preventDefault();
+        $("header").css("background","green")
+                   .css("height","50px");
+    });
   }
 
 }
