@@ -1,34 +1,29 @@
 import { Component, OnInit } from '@angular/core';
     
-declare var $:any;//para que no salte error de tipo ya que angular no lo reconoce
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  public widthSlider: any;
+  public anchuraToSlider: any;
+  public captions: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    
-    $("#logo").click(function(e: any){
-      e.preventDefault();
-        $("header").css("background","green")
-                   .css("height","50px");
-    });
-
-   
-      $('.galeria').bxSlider({
-        mode: 'fade',
-        captions: false,
-        slideWidth: 600
-      });
-    
-    
-
-
+  constructor() { 
+    // this.widthSlider = 0;
+    this.captions = true;
   }
 
+  ngOnInit(): void {
+ 
+  }
+
+  cargarSlider(){
+    this.anchuraToSlider = this.widthSlider;
+  }
+
+  resetearSlider(){
+    this.anchuraToSlider = false;
+  }
 }
