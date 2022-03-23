@@ -1,7 +1,13 @@
 <!--componente padre-->
 <div class="container">
     <h1>Contacto</h1>
-
+    <div id="texto" ><!--el #textos es una variable ViewChild osea para seleccionar la desde el component-->
+        <p #textos>
+            Esta es la página de contacto, puedes enviarnos cualquier duda
+        </p>
+    </div>
+    
+<!-- 
     Tamaño del slider:
     <input type="number" [(ngModel)]="widthSlider" (keyup.enter)="cargarSlider()">
     <button (click)="cargarSlider()">Cargar slider</button>
@@ -16,7 +22,7 @@
     <div *ngIf="autor">
         {{autor.nombre + " " + autor.website}}
     </div>
-    
+     -->
 
 </div>
 
