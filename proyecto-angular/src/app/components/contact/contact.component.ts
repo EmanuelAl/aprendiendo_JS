@@ -28,7 +28,7 @@ export class ContactComponent implements OnInit {
     -- en el componente se importa la clase ViewChild
     -- se crea en el componente una propiedad nueva con el decorador @ViewChild('nombrevariable')
      */
-    console.log(this.textos);
+    // console.log(this.textos);
     alert(this.textos.nativeElement.textContent);
 
   }
