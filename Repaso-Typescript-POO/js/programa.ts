@@ -1,3 +1,14 @@
+/*decorador */
+//agrega funcionalidad a la clase donde sea aplicada
+function arranque(lanzar: string){
+    return function(target: Function){
+        target.prototype.lanzamiento = function(): void{
+            alert(lanzar);
+        }
+    }
+}
+//aplicando decorador a clase padre
+@arranque('Lanzamiento del curso de NodeJs y Angular')
 /* Clase Padre */
 class Programa {
     public nombre: string;
@@ -16,6 +27,11 @@ class Programa {
         this.version = version;
     }
 }
+
+/*********************** */
+let programaConDecorador = new Programa();
+programaConDecorador.lanzamiento();
+/***************************** */
 /* Clase Hija */
 //con extends NombreClasePAdre indicamos que la clase va a heredar de la clase padre indicada
 class EdithVideo extends Programa{
@@ -33,7 +49,7 @@ class EdithVideo extends Programa{
         return this.getnombre()+" - "+this.getVersion()+" - "+this.getTimeline();
     }
 }
-
+/**instanciando una clase hija */
 var editor = new EdithVideo();
 editor.setNombre('Cantasia Studio');
 editor.setVersion(1);
@@ -66,7 +82,7 @@ function guardar(){
     //para borrar el campo input y quede limpio, despues de presionar boton guardar:
     (<HTMLInputElement>document.getElementById("nombre")).value = "";
 
-    
+
 /* equivalente para listar:
     for(let i = 0 ;i < programas.length; i++){
         var itemLista = document.createElement('li');

@@ -13,8 +13,24 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-/* Clase Padre */
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+/*decorador */
+//agrega funcionalidad a la clase donde sea aplicada
+function arranque(lanzar) {
+    return function (target) {
+        target.prototype.lanzamiento = function () {
+            alert(lanzar);
+        };
+    };
+}
+//aplicando decorador a clase padre
 var Programa = /** @class */ (function () {
+    /* Clase Padre */
     function Programa() {
     }
     Programa.prototype.getnombre = function () {
@@ -29,8 +45,16 @@ var Programa = /** @class */ (function () {
     Programa.prototype.setVersion = function (version) {
         this.version = version;
     };
+    Programa = __decorate([
+        arranque('Lanzamiento del curso de NodeJs y Angular')
+        /* Clase Padre */
+    ], Programa);
     return Programa;
 }());
+/*********************** */
+var programaConDecorador = new Programa();
+programaConDecorador.lanzamiento();
+/***************************** */
 /* Clase Hija */
 //con extends NombreClasePAdre indicamos que la clase va a heredar de la clase padre indicada
 var EdithVideo = /** @class */ (function (_super) {
@@ -49,6 +73,7 @@ var EdithVideo = /** @class */ (function (_super) {
     };
     return EdithVideo;
 }(Programa));
+/**instanciando una clase hija */
 var editor = new EdithVideo();
 editor.setNombre('Cantasia Studio');
 editor.setVersion(1);
