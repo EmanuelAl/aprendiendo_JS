@@ -1,3 +1,26 @@
+/* modulos
+se usan para organizar mejor el codigo 
+para tener una mejor abstraccion
+para que sea sencillo mantener codigo etc
+*/
+module Tienda{// en el modulo podemos tener la cantidad de clases con sus metodos que queramos
+    export class Ropa {
+        constructor(public titulo: string){
+            alert(titulo);
+        }
+    }
+    export class Informatica {
+        constructor( public titulo: string){
+            alert('Tienda de Tecnologia: '+titulo);
+        }
+    }
+}
+
+import Informatica = Tienda.Informatica;
+let cargar_informatica = new Informatica('supertienda');
+
+
+
 /*decorador */
 //agrega funcionalidad a la clase donde sea aplicada
 function arranque(lanzar: string){
