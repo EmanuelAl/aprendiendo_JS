@@ -1,4 +1,12 @@
-class Coche{
+/* para obligar a que se implemente algo en la clase
+obligar que se defina ciertos metodos por ejemplo
+que si o si tengan que estar en la clase */
+interface CocheBase{
+    getModelo(): string;
+    getVelocidad(): number;
+}
+
+class Coche implements CocheBase{
     /* visibilidad de las propiedades y metodos
     las propiedades o metodos pueden ser public-private-protected
     public: se accede desde dentro y fuera de la clase(una vez creado/instanciado antes el objeto),
