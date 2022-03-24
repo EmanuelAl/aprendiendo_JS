@@ -40,3 +40,42 @@ editor.setVersion(1);
 editor.setTimeline(4000);
 
 console.log(editor.getAllData());
+
+/* logica del formulario */
+
+let programas: any = [];
+
+function guardar(){
+    let nombre = (<HTMLInputElement>document.getElementById("nombre")).value.toString();
+
+    let programa = new Programa();
+    programa.setNombre(nombre);
+    programa.setVersion(1);
+
+    programas.push(programa);
+    /* para listarlos : */
+    let list = "";
+   
+    for(let i = 0 ;i < programas.length; i++){
+        list = `${list} <li> ${programas[i].getnombre()} </li>`;
+    }
+
+    let listado = <HTMLElement>document.getElementById("listado");
+    listado.innerHTML = list;
+
+    //para borrar el campo input y quede limpio, despues de presionar boton guardar:
+    (<HTMLInputElement>document.getElementById("nombre")).value = "";
+
+    
+/* equivalente para listar:
+    for(let i = 0 ;i < programas.length; i++){
+        var itemLista = document.createElement('li');
+        list = programas[i].getnombre();
+        itemLista.append(list);
+    }
+    let listado = document.querySelector("#listado");
+    listado.append(itemLista);
+*/
+
+
+}

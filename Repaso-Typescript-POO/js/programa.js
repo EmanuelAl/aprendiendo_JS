@@ -54,3 +54,30 @@ editor.setNombre('Cantasia Studio');
 editor.setVersion(1);
 editor.setTimeline(4000);
 console.log(editor.getAllData());
+/* logica del formulario */
+var programas = [];
+function guardar() {
+    var nombre = document.getElementById("nombre").value.toString();
+    var programa = new Programa();
+    programa.setNombre(nombre);
+    programa.setVersion(1);
+    programas.push(programa);
+    /* para listarlos : */
+    var list = "";
+    for (var i = 0; i < programas.length; i++) {
+        list = "".concat(list, " <li> ").concat(programas[i].getnombre(), " </li>");
+    }
+    var listado = document.getElementById("listado");
+    listado.innerHTML = list;
+    //para borrar el campo input y quede limpio, despues de presionar boton guardar:
+    document.getElementById("nombre").value = "";
+    /* equivalente para listar:
+        for(let i = 0 ;i < programas.length; i++){
+            var itemLista = document.createElement('li');
+            list = programas[i].getnombre();
+            itemLista.append(list);
+        }
+        let listado = document.querySelector("#listado");
+        listado.append(itemLista);
+    */
+}
