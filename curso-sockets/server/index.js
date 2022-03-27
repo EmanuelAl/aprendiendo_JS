@@ -32,6 +32,12 @@ io.on('connection', function(socket){//cuando se conecte ,se ejecuta el callback
     console.log("El cliente con IP: "+socket.handshake.address+" se ha conectado...");
                //   evento , callback
     socket.emit('messages', messages);
+
+    socket.on('add-message', function(data){
+        messages.push(data);
+        
+        io.sockets.emit('messages', messages);//emite para todos los que esten conectados
+    });
 });
 
 
